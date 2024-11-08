@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import Link from "next/link";
 import styles from "./AuthForm.module.css";
 
 function AuthForm({ title, formFields, handleSubmit, linkText, linkTo }) {
@@ -14,10 +14,10 @@ function AuthForm({ title, formFields, handleSubmit, linkText, linkTo }) {
         <div className={styles.form_fields}>
           {formFields}
           <button type="submit">{title}</button>
-          
-          <NavLink className={styles.auth_link} to={linkTo}>
+
+          <Link className={styles.auth_link} href={linkTo}>
             {linkText}
-          </NavLink>
+          </Link>
         </div>
       </form>
     </div>

@@ -1,14 +1,14 @@
 import QueryProvider from "providers/QueryProvider";
-import Router from "router/Router";
+import "../styles/globals.css";
 import { Toaster } from "react-hot-toast";
 
-function App() {
+function MyApp({ Component, pageProps }) {
   return (
     <QueryProvider>
-      <Router />
-      <Toaster />
+      <Component {...pageProps} />
+      <Toaster/>
     </QueryProvider>
   );
 }
 
-export default App;
+export default MyApp;

@@ -1,7 +1,7 @@
 @font-face {
   font-family: "Vazirmatn";
-  src: url("../fonts/vazir/Vazirmatn[wght].woff2") format("woff2 supports variations"),
-    url("../fonts/vazir/Vazirmatn[wght].woff2") format("woff2-variations");
+  src: url("fonts/vazir/Vazirmatn[wght].woff2") format("woff2 supports variations"),
+    url("fonts/vazir/Vazirmatn[wght].woff2") format("woff2-variations");
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
@@ -31,6 +31,7 @@ body {
   min-height: 100vh;
   padding: 10px;
   background-color: var(--bg-color);
+  direction: rtl;
 }
 a {
   text-decoration: inherit;

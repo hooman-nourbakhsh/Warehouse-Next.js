@@ -1,11 +1,11 @@
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/router";
 import { useMutation } from "@tanstack/react-query";
 import { setCookie } from "utils/cookie";
 import useFormFields from "./useFormFields";
 import notifications from "utils/toastNotifications";
 
 const useAuthForm = ({ type, authService, defaultValues, redirectPath }) => {
-  const navigate = useNavigate();
+  const router = useRouter();
   const [formData, handleChange] = useFormFields(defaultValues);
   const { username, password, verifypassword } = formData;
 
@@ -18,7 +18,7 @@ const useAuthForm = ({ type, authService, defaultValues, redirectPath }) => {
       } else {
         notifications("success", "ثبت نام با موفقیت انجام شد");
       }
-      navigate(redirectPath);
+      router.push(redirectPath);
     },
     onError: (error) => {
       if (error.response.statusText === "Unauthorized") {
